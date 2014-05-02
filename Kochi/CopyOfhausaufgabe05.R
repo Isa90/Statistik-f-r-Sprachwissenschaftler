@@ -1,5 +1,5 @@
 # Hausaufgabe 05
-# Phillip Alday <phillip.alday@staff.uni-marburg.de>
+# Isabell Koch <Kochi@students.uni-marburg.de>
 # 2014-05-02
 # Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz.
 
