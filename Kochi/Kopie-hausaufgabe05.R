@@ -1,7 +1,7 @@
 # Hausaufgabe 05
 # Isabell Koch <Kochi@students.uni-marburg.de>
 # 2014-05-02
-# Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz.
+# Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz. 
 
 # Sie sollten die Datei auch in Ihren Ordner kopieren und einen Commit machen, 
 # bevor Sie die Kopie weiter anpassen! Vergessen Sie dabei nicht, Namen, Datum 
