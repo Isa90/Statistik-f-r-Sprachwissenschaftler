@@ -87,7 +87,20 @@ frauen <- subset(dat, sex=="f")
 #falls Sie unsicher sind, ob das Bild korrekt aussieht.) Hier und im Folgenden
 #sollten Sie die Plots so machen, damit man einen Vergleich zwischen den Gruppen
 #ziehen kann. Dafür gibt es verschiedene Möglichkeiten; die Wahl bleibt Ihnen
-#überlassen. frauen.studiengang.bw <- CODE_HIER print(frauen.studiengang.bw)
+#überlassen. 
+frauen.Studiengang.bw <- subset(dat, major=="M.A..Klinische.Linguistik")
+print(frauen.Studiengang.bw)
+
+frauen.Studiengang.bw <- subset(dat, major=="M.A..Speech.Science")
+print(frauen.Studiengang.bw)
+
+frauen.Studiengang.bw <- subset(dat,major=="M.A..Linguistik.Kognition.und.Kommunikation")
+print(frauen.Studiengang.bw)
+
+frauen.Studiengang.bw <- subset(dat,major=="other")
+print(frauen.Studiengang.bw)
+
+
 
 # Sehen die Studiengänge anders aus? Wir müssen hier noch relativ vorrsichtig
 # sein, weil die Gruppen *unbalanziert* sind, d.h. die Gruppen sind
@@ -95,8 +108,10 @@ frauen <- subset(dat, sex=="f")
 # (Keine explizite Antwort nötig, nur eine Überlegung.)
 
 # Wir können natürlich auch die Dichte anschauen:
-#frauen.studiengang.dichte <- CODE_HIER
-#print(frauen.studiengang.dichte)
+frauen.studiengang.dichte <- subset(dat,major)
+print(frauen.studiengang.dichte)
+density(frauen$height)
+plot(density(frauen$height))
 
 # Haben Sie den gleichen Eindruck wie bei Box-Whisker bekommen? Unterscheiden
 # sich die Gruppen?
@@ -109,8 +124,8 @@ frauen <- subset(dat, sex=="f")
 # In R gibt es oft verschiedene Möglichkeiten, etwas zu machen. Wir haben bisher
 # Teile einer Datenmenge mit subset() rausgezogen, aber wir können das auch mit 
 # einer weiteren Syntax machen:
-#klinisch <- frauen[frauen$major == "M.A..Klinische.Linguistik",]
-#print(klinisch)
+klinisch <- frauen[frauen$major == "M.A..Klinische.Linguistik",]
+print(klinisch)
 
 # Das sieht erstmal sehr vervwirrend aus, ist es aber nicht. Die eckigen
 # Klammern bestimmen die Auswahl an Elementen. Wir haben das ja bei Indizen in
@@ -126,18 +141,21 @@ frauen <- subset(dat, sex=="f")
 # Jetzt brauchen wir die Teilmenge für die anderen beiden Studiengänge, 
 # Linguistik Kognition und Kommunikation und Speech Science
 # HINT: wie sehen die Namen aus bzw. wie werden sie im data frame buchstabiert?
-#linkk <- frauen[CODE_HIER]
-#speech <- frauen[CODE_HIER] 
+linkk <- frauen[frauen$major == "M.A..Linguistik.Kognition.und.Kommunikation",]
+print(linkk)
+speech <- frauen[frauen$major == "M.A..Speech.Science",]
+print(speech)
 
 # Berechnen Sie -- ohne Hilfe von sd() -- die Standardabweichung für die Größe der drei 
 # Gruppen. Sie können auch weitere Zeilen hinzufügen, wenn es Ihnen so leichter
 # ist. 
 # HINT: Formel und Beispiel für die Berechnung auf den Folien!
-#klinisch.sd <- CODE_HIER
+klinisch.sd <- frauen[frauen$major == "M.A..Klinische.Linguistik",]
+print(klinisch.sd)
 #linkk.sd <- CODE_HIER
 #speech.sd <- CODE_HIER
 
 # Berichten Sie jetzt die Mittelwerte und Standardabweichungen für die drei Gruppen. Die erste Gruppe steht hier als Muster:
-#print( paste("Studiengang: Klinische Linguistik","Mean:",mean(klinisch$height),"SD:",klinisch.sd) )
+print( paste("Studiengang: Klinische Linguistik","Mean:",mean(klinisch$height),"SD:",klinisch.sd) )
 #CODE_HIER
 
