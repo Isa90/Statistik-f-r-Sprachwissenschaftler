@@ -88,18 +88,9 @@ frauen <- subset(dat, sex=="f")
 #sollten Sie die Plots so machen, damit man einen Vergleich zwischen den Gruppen
 #ziehen kann. Dafür gibt es verschiedene Möglichkeiten; die Wahl bleibt Ihnen
 #überlassen. 
-frauen.Studiengang.bw <- subset(dat, major=="M.A..Klinische.Linguistik")
-print(frauen.Studiengang.bw)
-
-frauen.Studiengang.bw <- subset(dat, major=="M.A..Speech.Science")
-print(frauen.Studiengang.bw)
-
-frauen.Studiengang.bw <- subset(dat,major=="M.A..Linguistik.Kognition.und.Kommunikation")
-print(frauen.Studiengang.bw)
-
-frauen.Studiengang.bw <- subset(dat,major=="other")
-print(frauen.Studiengang.bw)
-
+height.grafik.basis <- ggplot(data=dat,aes(x=height))
+frauen.studiengang.bw <- height.grafik.basis + geom_boxplot(aes(x=major,y=height))
+print(frauen.studiengang.bw)
 
 
 # Sehen die Studiengänge anders aus? Wir müssen hier noch relativ vorrsichtig
@@ -108,10 +99,9 @@ print(frauen.Studiengang.bw)
 # (Keine explizite Antwort nötig, nur eine Überlegung.)
 
 # Wir können natürlich auch die Dichte anschauen:
-frauen.studiengang.dichte <- subset(dat,major)
+
+frauen.studiengang.dichte <- height.grafik.basis + geom_density(aes(color=major,fill=major),alpha=0.5)
 print(frauen.studiengang.dichte)
-density(frauen$height)
-plot(density(frauen$height))
 
 # Haben Sie den gleichen Eindruck wie bei Box-Whisker bekommen? Unterscheiden
 # sich die Gruppen?
@@ -148,7 +138,7 @@ print(speech)
 
 # Berechnen Sie -- ohne Hilfe von sd() -- die Standardabweichung für die Größe der drei 
 # Gruppen. Sie können auch weitere Zeilen hinzufügen, wenn es Ihnen so leichter
-# ist. 
+# ist.
 # HINT: Formel und Beispiel für die Berechnung auf den Folien!
 klinisch.sd <- frauen[frauen$major == "M.A..Klinische.Linguistik",]
 print(klinisch.sd)
