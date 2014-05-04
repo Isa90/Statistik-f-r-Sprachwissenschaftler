@@ -140,12 +140,18 @@ print(speech)
 # Gruppen. Sie können auch weitere Zeilen hinzufügen, wenn es Ihnen so leichter
 # ist.
 # HINT: Formel und Beispiel für die Berechnung auf den Folien!
-klinisch.sd <- frauen[frauen$major == "M.A..Klinische.Linguistik",]
+
+klinisch.sd <- sqrt(mean((klinisch$height - mean(klinisch$height))^2))
 print(klinisch.sd)
-#linkk.sd <- CODE_HIER
-#speech.sd <- CODE_HIER
+
+linkk.sd <- sqrt(mean((linkk$height - mean(linkk$height))^2))
+print(linkk.sd)
+
+speech.sd <- sqrt(mean((speech$height - mean(speech$height))^2))
+print(speech.sd)
 
 # Berichten Sie jetzt die Mittelwerte und Standardabweichungen für die drei Gruppen. Die erste Gruppe steht hier als Muster:
 print( paste("Studiengang: Klinische Linguistik","Mean:",mean(klinisch$height),"SD:",klinisch.sd) )
-#CODE_HIER
+print( paste("Studiengang: Lingustik Kognition und Kommunikation","Mean:",mean(linkk$height),"SD:",linkk.sd) )
+print( paste("Studiengang: Speech Science","Mean:",mean(speech$height),"SD:",speech.sd) )
 
