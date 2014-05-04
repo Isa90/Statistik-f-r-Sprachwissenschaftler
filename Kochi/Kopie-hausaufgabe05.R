@@ -1,6 +1,6 @@
 # Hausaufgabe 05
 # Isabell Koch <Kochi@students.uni-marburg.de>
-# 2014-05-03
+# 2014-05-04
 # Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz. 
 
 # Sie sollten die Datei auch in Ihren Ordner kopieren und einen Commit machen, 
@@ -88,7 +88,7 @@ frauen <- subset(dat, sex=="f")
 #sollten Sie die Plots so machen, damit man einen Vergleich zwischen den Gruppen
 #ziehen kann. Dafür gibt es verschiedene Möglichkeiten; die Wahl bleibt Ihnen
 #überlassen. 
-height.grafik.basis <- ggplot(data=dat,aes(x=height))
+height.grafik.basis <- ggplot(data=frauen,aes(x=height))
 frauen.studiengang.bw <- height.grafik.basis + geom_boxplot(aes(x=major,y=height))
 print(frauen.studiengang.bw)
 
