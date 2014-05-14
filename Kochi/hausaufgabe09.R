@@ -1,6 +1,6 @@
 # Hausaufgabe 09
-# Phillip Alday <phillip.alday@staff.uni-marburg.de>
-# 2014-05-02
+# Isabell Koch <Kochi@students.uni-marburg.de>
+# 2014-05-14
 # Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz.
 
 
@@ -50,14 +50,14 @@ rt <- read.table("punkt_rt.tab",header=TRUE)
 # (http://osdoc.cogsci.nl/) auch zu Hause ausführen!)
 
 # Wir schauen uns erst mal eine Zusammenfassung der Daten an:
-# print(summary(rt))
+print(summary(rt))
 
 # Wir sehen sofort, dass R die Variabel "subj" als numerische Variable
 # behandelt hat, obwohl sie eigentlich kategorisch ist. Das müssen wir ändern:
-# rt$subj <- as.factor(rt$subj)
+rt$subj <- as.factor(rt$subj)
 # 
-# rt.plot <- qplot(x=RT,color=subj,fill=subj,data=rt, geom="density",alpha=I(0.3))
-# print(rt.plot)
+rt.plot <- qplot(x=RT,color=subj,fill=subj,data=rt, geom="density",alpha=I(0.3))
+print(rt.plot)
 
 # Haben die Daten der beiden Gruppen -- die wiederholten Messwerte der einzelnen
 # Probanden bilden ja Gruppen -- homogene Varianz? Bevor Sie irgendwelche Tests 
