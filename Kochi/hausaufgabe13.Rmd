@@ -1,6 +1,6 @@
 % Hausaufgabe 13
-% Phillip Alday <phillip.alday@staff.uni-marburg.de>
-% 2014-05-27
+% Isabell Koch <Kochi@students.uni-marburg.de>
+% 2014-06-01
 
 Falls die Umlaute in dieser und anderen Dateien nicht korrekt dargestellt werden, sollten Sie File > Reopen with Encoding > UTF-8 sofort machen (und auf jeden Fall ohne davor zu speichern), damit die Enkodierung korrekt erkannt wird! 
 
@@ -104,16 +104,26 @@ Sind alle Plots gleich gut?
 Bei "Item" berechnen wir die Mittelwerte aller Trials innerhalb eines Items, d.h. wir nehmen den itemweise Mittelwert über Versuchpersonen hinweg. Dafür können wir `aggregate()` nutzen.
 
 ```{r}
-# priming.by.item <- CODE_HIER
+# priming.by.item <- aggregate(RT ~ cond * item,data=priming,FUN = mean)
 ```
 
 Wir wollen auch hier die Daten tabellerisch darstellen. Erstellen Sie eine Tabelle in Wide-Format für die Mittelwerte by Item.
 
-CODE_BLOCK_HIER
++```{r, results='asis'}
+
++priming.by.item.wide1 <- dcast(priming.by.item,item ~ cond, value.var="RT")
+
++print(xtable(priming.by.item.wide1),type="html",include.rownames=FALSE)
+
++```
 
 Und *eine* passende Grafik für die Daten by Item sollten wir auch generieren:
 
-CODE_BLOCK_HIER
++```{r}
+
++ggplot(data=priming.by.item) + geom_boxplot(aes(x=cond,y=RT,color=cond,fill=cond),alpha=0.5)
+
++```
 
 Sehen die Daten by Subject und by Item gleich aus? Wie sehen sie im Vergleich zu den Single-Trial-Daten aus?
 
