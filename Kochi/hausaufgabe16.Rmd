@@ -57,6 +57,32 @@ ggplot(diamonds,aes(x=carat,y=price,color=color)) + geom_point()
 ggplot(diamonds,aes(x=carat,y=price,color=color)) + geom_point(alpha=0.3)
 ggplot(diamonds,aes(x=carat,y=price,color=color)) + geom_point() + facet_wrap(~color)
 ```
+# Analyse
+Übergreifende Frage: Inwieweit bestimmen die Faktoren Karat, Reinheit und Schliff den Preis?
+
+Unterfrage 1: Inwiefern bestimmt Karat den Preis?
+```{r}
+ggplot(diamonds, aes(x=carat, y=price))+geom_point()
+```
+
+Die Grafik zeigt: Karat und Preis stehen in Verbindung.Tendenziell ist erkennbar, dass häufig mehr Karat zu einem höheren Preis führen kann.Allerdings scheinen noch andere Faktoren den Preis zu beeinflussen, da es sehr viele Ausreißer gibt.
+
+Unterfrage 2: Inwiefern bestimmt Reinheit den Preis?
+```{r}
+ggplot(diamonds, aes(x=clarity, y=price))+geom_point()
+```
+
+Diese Grafik zeigt, dass die Reinheit in einem gewissen Grad den Preis bestimmt. In einem gewissen Grad meint, dass lediglich bei der Reinheitsstufe l1 deutlich erkennbar ist, dass sich der Preis der Diamanten eher in der unteren Hälfte befindet.
+
+Unterfrage 3: Inwiefern bestimmt der Schliff den Preis?
+```{r}
+ggplot(diamonds, aes(x=cut, y=price))+geom_point()
+```
+
+Die Grafik zeigt: Der Schliff scheint nur in sehr geringem Maße den Preis zu bestimmen.
+
+Von den Merkmalen Karat, Reinheit und Schliff scheint am meisten Karat den Preis zu bestimmen, was jedoch nicht heißt, dass die anderen Merkmale nicht 
+berücksichtigt werden.
 
 # Noch eine Überlegung
 Haben Sie dabei explorativ oder konfirmativ gearbeitet? Was hat das für eine Auswirkung auf die Interpretation der Ergebnisse?
