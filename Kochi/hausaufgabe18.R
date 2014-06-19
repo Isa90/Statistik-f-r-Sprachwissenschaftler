@@ -1,6 +1,6 @@
 # Hausaufgabe 18
-# Phillip Alday <phillip.alday@staff.uni-marburg.de>
-# 2014-06-17
+# Isabell Koch <Kochi@students.uni-marburg.de>
+# 2014-06-19
 # Dieses Werk ist lizenziert unter einer CC-BY-NC-SA Lizenz.
 
 
