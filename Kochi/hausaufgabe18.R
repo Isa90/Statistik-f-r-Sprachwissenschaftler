@@ -84,13 +84,15 @@ print(model.summary)
 # passiert, wenn wir die Reihenfolge von x1 und x2 in lm() umstellen? Führen Sie
 # die passende Regression aus:
 
-# CODE_HIER
+model_2 <- lm(y ~ x2 + x1, data=linreg)
+model_2.summary <- summary(model_2)
+print(model_2.summary)
 
 # Bei linearen Regression müssen wir immer aufpassen, dass unsere Prediktoren
 # nicht zu stark miteinander korrelieren. Das könnten wir auch mit cor()
 # austesten. Hier sollten Sie schon Pearsons Korrelationkoeffizienten nennen
 # können, ohne folgenden Befehl auszuführen.
-# cor(linreg$x1,linreg$x2)
+cor(linreg$x1,linreg$x2)
 
 # Wir laden jetzt einen weiteren Datensatz als Beispiel: 
 # (Sie müssen den folgenden Befehl evtl. anpassen!)
